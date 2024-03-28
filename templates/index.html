@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendations</title>
+</head>
+<body>
+    <h2>Movie Recommendations</h2>
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>What do you think about these movies?</h3>
+    <form method="post">
+        <textarea name="feedback" placeholder="Enter your feedback here..."></textarea>
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    {% if feedback_type %}
+        <h4>Your feedback is considered: {{ feedback_type }}</h4>
+    {% endif %}
+</body>
+</html>
